@@ -2,10 +2,10 @@ const request = require('request');
 
 module.exports = (req, res) => {
   // proxy middleware options
-  let prefix = "api.notion.com"
-  if (!req.url.startsWith(prefix)) {
-    return;
-  }
+//   let prefix = "api.notion.com"
+//   if (!req.url.startsWith(prefix)) {
+//     return;
+//   }
 //   let target = "https://api.notion.com" + req.url.substring(prefix.length);
 
 //   var options = {
