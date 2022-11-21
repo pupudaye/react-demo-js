@@ -25,8 +25,10 @@ const apiProxy = createProxyMiddleware({
         "^/notion-api": "" // strip "/api" from the URL
     },
     onProxyRes(proxyRes) {
-        proxyRes.headers['x-added'] = 'foobar'; // add new header to response
-        delete proxyRes.headers['x-removed']; // remove header from response
+        // proxyRes.headers['x-added'] = 'foobar'; // add new header to response
+        proxyRes.headers['Notion-Version'] = res.headers['notion-version']; // add new header to response
+        proxyRes.headers['Authorization'] = res.headers['authorization']; // add new header to response
+        // delete proxyRes.headers['x-removed']; // remove header from response
     }
 });
 
