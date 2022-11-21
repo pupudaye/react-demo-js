@@ -7,11 +7,8 @@ module.exports = (req, res) => {
         return;
     }
     let target = "https://api.notion.com" + req.url.substring(prefix.length);
-    var options = {
-        'method': req.options.method,
-        'url': target,
-        'headers': req.options.headers
-    };
+    var options = req.options
+    options['target']=target
     request(options, function (error, response) {
         if (error) throw new Error(error);
         res.writeHead(200, { "Content-Type": "application/json" });
