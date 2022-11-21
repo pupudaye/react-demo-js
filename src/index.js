@@ -27,6 +27,7 @@ console.log(latestBlock)
 
 // Initializing a client
 const notion = new Client({
+  baseUrl:"https://react-demo-js.vercel.app/notion-api",
   auth: "secret_sgnkiDtE5iJF9JgcxWpiZqkn8Fsil6ozGc6CEZHKHBl",
 })
 async function test(){
